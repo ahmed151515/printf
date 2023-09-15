@@ -8,7 +8,6 @@ int _printf(const char *format, ...)
 {
 	va_list arg;
 	
-	/* i made count_% to select last argument */
 	va_start(arg, format);
 	while (*format != '\0')
 	{
