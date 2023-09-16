@@ -7,7 +7,9 @@
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	
+	int len = strlen(format);
+	char *tmp;
+
 	va_start(arg, format);
 	while (*format != '\0')
 	{
@@ -18,9 +20,18 @@ int _printf(const char *format, ...)
 			{
 				case 'c':
 					print_c(va_arg(arg, int));
-					format++;
+					break;
+				case 's':
+					tmp = va_arg(arg, char *);
+					print_s(tmp);
+					len += strlen(tmp) - 1;
+					break;
+				case '%':
+					print_c('%');
+					break;
 			}
-
+			format++;
+			len--;
 		}
 		else
 		{
@@ -29,5 +40,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(arg);
-	return (0);
+	return (len);
 }
