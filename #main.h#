@@ -10,7 +10,7 @@
 #define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024
 
-#define F_MINUS 1
+
 
 int _printf(const char *format, ...);
 int handle_print(const char *fmt, int *i,
