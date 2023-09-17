@@ -73,8 +73,8 @@ int print_octal(va_list types, char buffer[],
      int flags, int width, int precision, int size);
 
 
-/**int print_c(char);
-   int print_s(char *);*/
+int print_c(char);
+int print_s(char *);
 int _printf(const char *format, ...);
 
 #endif
