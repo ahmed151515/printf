@@ -30,6 +30,9 @@ int _printf(const char *format, ...)
 				case '%':
 					print_c('%');
 					break;
+				case 'd':
+					len += print_d(va_arg(arg, int));
+					break;
 			}
 			format++;
 			len--;

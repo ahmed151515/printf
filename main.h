@@ -70,11 +70,12 @@ int print_int(va_list types, char buffer[],
 int print_unsigned(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int print_octal(va_list types, char buffer[],
-     int flags, int width, int precision, int size);
+	int flags, int width, int precision, int size);
 
-
+/* ------------ahmed-------------*/
 int print_c(char);
 int print_s(char *);
+int print_d(int);
 int _printf(const char *format, ...);
 
 #endif
