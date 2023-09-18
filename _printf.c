@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _printf - like printf
  * @format: srintg
@@ -9,8 +8,9 @@ int _printf(const char *format, ...)
 {
 	va_list arg;
 	int len = strlen(format);
-	char *tmp;
 
+	if (format == NULL)
+		return (-1);
 	va_start(arg, format);
 	while (*format != '\0')
 	{
@@ -23,8 +23,7 @@ int _printf(const char *format, ...)
 					print_c(va_arg(arg, int));
 					break;
 				case 's':
-					tmp = va_arg(arg, char *);
-					len += print_s(tmp);
+					len += print_s(va_arg(arg, char *));
 					break;
 				case '%':
 					print_c('%');
