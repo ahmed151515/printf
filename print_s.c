@@ -6,5 +6,10 @@
  */
 int print_s(char *s)
 {
-	return (write(1, s, strlen(s)));
+	if (s == NULL)
+	{
+		s = "(null)";
+	}
+	write(1, s, strlen(s));
+	return (strlen(s) - 1);
 }

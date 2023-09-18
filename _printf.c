@@ -24,13 +24,15 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					tmp = va_arg(arg, char *);
-					print_s(tmp);
-					len += strlen(tmp) - 1;
+					len += print_s(tmp);
 					break;
 				case '%':
 					print_c('%');
 					break;
 				case 'd':
+					len += print_d(va_arg(arg, int));
+					break;
+				case 'i':
 					len += print_d(va_arg(arg, int));
 					break;
 			}
