@@ -27,10 +27,10 @@ int _printf(const char *format, ...)
 					print_c('%');
 					break;
 				case 'd':
-					len += print_d(va_arg(arg, int));
+					len += print_d(va_arg(arg, int)) - 1;
 					break;
 				case 'i':
-					len += print_d(va_arg(arg, int));
+					len += print_d(va_arg(arg, int)) - 1;
 					break;
 			}
 			format++;
